@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Epoxy</id>
+    <version>$version$</version>
+    <title>Epoxy</title>
+    <authors>Gökhan Gökalp</authors>
+    <owners>Gökhan Gökalp</owners>
+    <projectUrl>https://github.com/GokGokalp/Epoxy</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple both fromuri and frombody model binder for Asp.NET Web API</description>
+    <copyright>Copyright 2017 Gökhan Gökalp</copyright>
+    <tags>Asp.Net Web API Model Binder, FromUri and FromBody binder</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
+      <dependency id="Newtonsoft.Json" version="6.0.4" />
+    </dependencies>
+  </metadata>
+    <files>
+    <file src="bin\Release\Epoxy.dll" exclude="bin\Release\*.dll.config" target="lib\net461\Epoxy.dll" />
+  </files>
+</package>

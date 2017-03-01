@@ -18,7 +18,7 @@ PM> Install-Package Epoxy
 Usage:
 -----
 
-Insert _EpoxyFromUriAndFromBodyBinderProvider_ to HttpConfiguration.Services:
+Firstly insert _EpoxyFromUriAndFromBodyBinderProvider_ to HttpConfiguration.Services:
 
 ```cs
 public static class WebApiConfig
@@ -34,7 +34,7 @@ public static class WebApiConfig
 
 after service insert step, you should use [ModelBinder] attribute. There are two ways:
 
-1. way is: in Controller. For example:
+First way is: in Controller. For example:
 ```cs
 namespace Epoxy.Tests.Host.Controllers
 {
@@ -57,7 +57,7 @@ namespace Epoxy.Tests.Host.Controllers
 
 after this, Epoxy will bind uri parameters(eg: productId) and payload data to _AddProductVariantRequest_ object.
 
-2. way is: in request object. For example:
+Second way is: in request object. For example:
 ```cs
 [ModelBinder]
 public class AddProductVariantRequest
