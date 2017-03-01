@@ -7,14 +7,9 @@ namespace Epoxy.Tests.Host.Controllers
     public class ProductController : ApiController
     {
         [HttpPost, Route("{productId}/variants")]
-        public IHttpActionResult AddProductsVariants([ModelBinder]AddProductVariantRequest addProductVariantRequest)
+        public AddProductVariantResponse AddProductsVariants([ModelBinder]AddProductVariantRequest addProductVariantRequest)
         {
-            if (addProductVariantRequest.ProductId > 0)
-            {
-                return Ok();
-            }
-            
-            return BadRequest();
+            return addProductVariantRequest;
         }
     }
 }
