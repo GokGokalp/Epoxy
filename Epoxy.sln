@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epoxy", "Epoxy\Epoxy.csproj", "{59710DAC-68E6-4A5D-A655-06331CEAC9C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epoxy.Tests.Host", "Epoxy.Tests.Host\Epoxy.Tests.Host.csproj", "{71A82182-502B-406D-AE7C-6EED88C19A97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7BC5FAA7-E10F-4B9F-BB1D-4C70D7192D20}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{87D3D514-BA19-4DA1-AC8C-CCD13EDF16BF}"
+	ProjectSection(SolutionItems) = preProject
+		misc\epoxy-logo.png = misc\epoxy-logo.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59710DAC-68E6-4A5D-A655-06331CEAC9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59710DAC-68E6-4A5D-A655-06331CEAC9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59710DAC-68E6-4A5D-A655-06331CEAC9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59710DAC-68E6-4A5D-A655-06331CEAC9C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A82182-502B-406D-AE7C-6EED88C19A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A82182-502B-406D-AE7C-6EED88C19A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A82182-502B-406D-AE7C-6EED88C19A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A82182-502B-406D-AE7C-6EED88C19A97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
