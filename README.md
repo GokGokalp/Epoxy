@@ -6,7 +6,7 @@
 Simple both _fromuri_ and _frombody_ model binder for Asp.NET Web API
 
 [![Build status](https://ci.appveyor.com/api/projects/status/cmt771l56h9hm3fj?svg=true)](https://ci.appveyor.com/project/GokGokalp/epoxy)
-![Test status](http://teststatusbadge.azurewebsites.net/api/status/GokGokalp/epoxy)]
+![Test status](http://teststatusbadge.azurewebsites.net/api/status/GokGokalp/epoxy)
 [![NuGet version](https://badge.fury.io/nu/Epoxy.svg)](https://badge.fury.io/nu/Epoxy)
 
 ### NuGet Packages
