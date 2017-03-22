@@ -21,7 +21,8 @@ namespace Epoxy
         {
             MethodInfo deserializeMethod = GetType().GetMethod("DeserializeModel")
                              .MakeGenericMethod(bindingContext.ModelType);
-            var model = deserializeMethod.Invoke(this, new object[] { actionContext });
+            var model = deserializeMethod.Invoke(this, new object[] { actionContext }) ??
+                        Activator.CreateInstance(bindingContext.ModelType);
 
             foreach (var prop in model.GetType().GetProperties())
             {
