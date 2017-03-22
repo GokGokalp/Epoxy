@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using Epoxy.Tests.Host;
+using Epoxy.Tests.Host.Response;
 using Microsoft.Owin.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -11,11 +12,13 @@ namespace Epoxy.Tests
     public class FromUriAndFromBodyBinderTests
     {
         private string _variantAddUrl;
+        private string _apiUrl;
 
         [TestInitialize]
         public void Initialize()
         {
             _variantAddUrl = "http://localhost:8080/api/products/{0}/variants";
+            _apiUrl = "http://localhost:8080/api/products/";
         }
 
         [TestMethod]
@@ -55,6 +58,28 @@ namespace Epoxy.Tests
             Assert.AreEqual(addProductVariantRequest.SpecialPriceStartDate, addProductVariantResponse.SpecialPriceStartDate);
             Assert.AreEqual(addProductVariantRequest.CreatedOn, addProductVariantResponse.CreatedOn);
             Assert.IsNotNull(addProductVariantResponse.DefaultCategory);
+        }
+
+        [TestMethod]
+        public void FromUriAndFromBodyBinder_BindIdParameter_ReturnBindedObject()
+        {
+            //Arrange
+            int id = 5;
+            string getUrl = $"{_apiUrl}{id}";
+             
+            GetResponse getResponse;
+
+            //Act
+            using (var server = TestServer.Create<Startup>())
+            {
+                HttpResponseMessage response = server.CreateRequest(getUrl)
+                                              .GetAsync().Result;
+
+                getResponse= response.Content.ReadAsAsync<GetResponse>().Result;
+            }
+
+            //Assert
+            Assert.AreEqual(id, getResponse.Id);
         }
     }
 }
