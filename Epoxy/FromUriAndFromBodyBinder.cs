@@ -19,6 +19,7 @@ namespace Epoxy
 
         public bool BindModel(HttpActionContext actionContext, ModelBindingContext bindingContext)
         {
+
             MethodInfo deserializeMethod = GetType().GetMethod("DeserializeModel")
                              .MakeGenericMethod(bindingContext.ModelType);
             var model = deserializeMethod.Invoke(this, new object[] { actionContext }) ??
@@ -42,10 +43,18 @@ namespace Epoxy
 
         public T DeserializeModel<T>(HttpActionContext actionContext) where T : class
         {
-            string query = actionContext.Request.Content.ReadAsStringAsync().Result;
-            var model = JsonConvert.DeserializeObject<T>(query, _formatter.SerializerSettings);
+            try
+            {
+                string query = actionContext.Request.Content.ReadAsStringAsync().Result;
 
-            return model;
+                var model = JsonConvert.DeserializeObject<T>(query, _formatter.SerializerSettings);
+
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
